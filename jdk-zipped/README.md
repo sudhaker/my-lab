@@ -21,3 +21,11 @@ for /r %MYJDK% %x in (*.pack) do %MYJDK%\bin\unpack200 -r "%x" "%~dx%~px%~nx.jar
 rmdir /q /s jdk1.8.0_131
 
 ```
+
+Inside a batch file, please change the unpack line as following
+
+```
+for /r %MYJDK% %%x in (*.pack) do %MYJDK%\bin\unpack200 -r "%%x" "%%~dx%%~px%%~nx.jar"
+```
+
+nJoy!
