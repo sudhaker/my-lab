@@ -18,7 +18,7 @@ for /r %MYJDK% %x in (*.pack) do %MYJDK%\bin\unpack200 -r "%x" "%~dx%~px%~nx.jar
 
 7z.exe a -tzip %MYJDK%.zip %MYJDK%
 
-rmdir /q /s jdk1.8.0_131
+rmdir /q /s %MYJDK%
 
 ```
 
