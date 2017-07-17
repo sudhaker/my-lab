@@ -1,5 +1,10 @@
 ### Installing JDK without administrator privileges
 
+Get the latest JDK installer & 7zip executables in a temp folder.
+
+http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+http://www.7-zip.org/download.html or https://github.com/sudhaker/my-lab/tree/master/7zip
+
 ```
 
 set INSTALL=jdk-8u131-windows-x64.exe
@@ -22,7 +27,7 @@ rmdir /q /s %MYJDK%
 
 ```
 
-Inside a batch file, please change the unpack line as following
+If running the above commands using a batch file, please change the unpack line as following
 
 ```
 for /r %MYJDK% %%x in (*.pack) do %MYJDK%\bin\unpack200 -r "%%x" "%%~dx%%~px%%~nx.jar"
