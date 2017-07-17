@@ -1,9 +1,10 @@
 ### Installing JDK without administrator privileges
 
-Get the latest JDK installer & 7zip executables in a temp folder.
+Get the latest JDK installer & 7-Zip executables in a temp folder.
 
-http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-http://www.7-zip.org/download.html or https://github.com/sudhaker/my-lab/tree/master/7zip
+JDK @ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+7-Zip @ http://www.7-zip.org/download.html or https://github.com/sudhaker/my-lab/tree/master/7zip
 
 ```
 
