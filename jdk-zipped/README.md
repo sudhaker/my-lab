@@ -6,6 +6,8 @@ JDK @ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-213
 
 7-Zip @ http://www.7-zip.org/download.html or https://github.com/sudhaker/my-lab/tree/master/7zip
 
+Now run follwing commands, one by one
+
 ```
 
 set INSTALL=jdk-8u131-windows-x64.exe
@@ -28,7 +30,7 @@ rmdir /q /s %MYJDK%
 
 ```
 
-If running the above commands using a batch file, please change the unpack line as following
+If running the above commands using a batch file, please change the unpack line as following (with escape charater).
 
 ```
 for /r %MYJDK% %%x in (*.pack) do %MYJDK%\bin\unpack200 -r "%%x" "%%~dx%%~px%%~nx.jar"
