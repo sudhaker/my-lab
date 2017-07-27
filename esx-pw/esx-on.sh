@@ -5,23 +5,24 @@ if [ "$#" -eq 0 ]; then
 	exit
 fi
 
-PW_STATE=on
+BMS_PREFIX="192.168.20.$MM"
+PW_STATE="on"
+
+set_power_state() {
+	MM=$(echo $1 | tr n 1)
+	BMS_IP="$BMS_PREFIX.$MM"
+	echo "BMS => $BMS_IP"
+	ipmitool -H $BMS_IP -U root -P root chassis power PW_STATE 2> /dev/null && sleep 5
+}
 
 for N in "$@"
 do
-	if [ "$N" == "all" ] || [ "$N" == "n1" ]; then
-		ipmitool -H 192.168.20.11 -U root -P root chassis power $PW_STATE 2> /dev/null
-		sleep 5
-	fi
-
-	if [ "$N" == "all" ] || [ "$N" == "n2" ]; then
-		ipmitool -H 192.168.20.12 -U root -P root chassis power $PW_STATE 2> /dev/null
-		sleep 5
-	fi
-
-	if [ "$N" == "all" ] || [ "$N" == "n3" ]; then
-		ipmitool -H 192.168.20.13 -U root -P root chassis power $PW_STATE 2> /dev/null
-		sleep 5
+	if [ "$N" == "all" ]; then
+		set_power_state 'n1'
+		set_power_state 'n2'
+		set_power_state 'n3'
+	else
+		set_power_state $N
 	fi
 done
 
