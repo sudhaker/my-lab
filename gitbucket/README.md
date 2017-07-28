@@ -1,4 +1,4 @@
-##GitBucket - Simple Install
+## GitBucket - Simple Install
 
 ### Launch container
 
@@ -12,7 +12,7 @@ f99aq8ove/gitbucket
 
 URL: `http://IP_ADDR:8080/`
 
-##GitBucket - Dedicated IP install
+## GitBucket - Dedicated IP install
 
 ### Create network (if needed)
 
