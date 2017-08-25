@@ -12,7 +12,7 @@ set_power_state() {
 	MM=$(echo $1 | tr n 1)
 	BMS_IP="$BMS_PREFIX.$MM"
 	echo "BMS => $BMS_IP"
-	ipmitool -H $BMS_IP -U root -P root chassis power PW_STATE 2> /dev/null && sleep 5
+	ipmitool -H $BMS_IP -U root -P root chassis power $PW_STATE 2> /dev/null && sleep 5
 }
 
 for N in "$@"
